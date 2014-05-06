@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using Wintellect.PowerCollections;
 
     public class EventHolder
     {
