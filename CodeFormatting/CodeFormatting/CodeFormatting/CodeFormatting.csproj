@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PowerCollections">
-      <HintPath>..\..\..\..\..\..\PowerCollections\Binaries\PowerCollections.dll</HintPath>
+      <HintPath>PowerCollections\Binaries\PowerCollections.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,7 +47,7 @@
     <Compile Include="Messages.cs" />
     <Compile Include="EventCreator.cs" />
     <Compile Include="EventHolder.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="EventsExecutions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

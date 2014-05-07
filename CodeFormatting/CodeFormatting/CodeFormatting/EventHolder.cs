@@ -35,22 +35,22 @@
 
         public void ListEvents(DateTime date, int count)
         {
-            OrderedBag<EventCreator>.View eventsToShow = this.eventsByDate.RangeFrom(new EventCreator(date, ", ", "tam"), true);
-            int showed = 0;
+            OrderedBag<EventCreator>.View eventsToShow = this.eventsByDate.RangeFrom(new EventCreator(date, string.Empty,string.Empty), true);
+            int shown = 0;
 
             foreach (var eventToShow in eventsToShow)
             {
-                if (showed == count)
+                if (shown == count)
                 {
                     break;
                 }
 
                 Messages.PrintEvent(eventToShow);
 
-                showed++;
+                shown++;
             }
 
-            if (showed == 0)
+            if (shown == 0)
             {
                 Messages.NoEventsFound();
             }

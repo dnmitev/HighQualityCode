@@ -6,38 +6,99 @@ namespace CodeFormatting
 
     public class EventCreator : IComparable
     {
-        private readonly DateTime date;
-        private readonly String title;
-        private readonly String location;
+        private DateTime date;
+        private string title;
+        private string location;
 
-        public EventCreator(DateTime date, String title, String location)
+        public EventCreator(DateTime date, string title, string location)
         {
-            this.date = date;
-            this.title = title;
-            this.location = location;
+            this.Date = date;
+            this.Title = title;
+            this.Location = location;
+        }
+
+        public DateTime Date
+        {
+            get
+            {
+                return this.date;
+            }
+
+            set
+            {
+                // possible data validation
+                this.date = value;
+            }
+        }
+
+        public string Title
+        {
+            get
+            {
+                return this.title;
+            }
+
+            set
+            {
+                // possible data validation
+                this.title = value;
+            }
+        }
+
+        public string Location
+        {
+            get
+            {
+                return this.location;
+            }
+
+            set
+            {
+                // possible data validation
+                this.location = value;
+            }
         }
 
         public int CompareTo(object compareObj)
         {
-            EventCreator other = compareObj as EventCreator;
-            int byDate = this.date.CompareTo(other.date);
-            int byTitle = this.title.CompareTo(other.title);
-
-            int byLocation = this.location.CompareTo(other.location);
-            if (byDate == 0)
+            EventCreator otherEvent = compareObj as EventCreator;
+     
+            if (this == null)
             {
-                if (byTitle == 0)
+                if (otherEvent == null)
                 {
-                    return byLocation;
+                    return 0;
                 }
                 else
                 {
-                    return byTitle;
+                    return -1;
                 }
+            }
+            else if (otherEvent == null)
+            {
+                return 1;
             }
             else
             {
-                return byDate;
+                int byDate = this.date.CompareTo(otherEvent.date);
+                int byTitle = this.title.CompareTo(otherEvent.title);
+                int byLocation = this.location.CompareTo(otherEvent.location);
+
+                if (byDate == 0)
+                {
+                    if (byTitle == 0)
+                    {
+                        return byLocation;
+                    }
+                    else
+                    {
+                        return byTitle;
+                    }
+                }
+                else
+                {
+                    return byDate;
+                }
             }
         }
 
