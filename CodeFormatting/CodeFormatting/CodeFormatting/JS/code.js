@@ -1,4 +1,4 @@
-; (function () {
+(function () {
     "use strict";
 
     var browserClient = navigator.appName,
@@ -38,7 +38,7 @@
 
     function popTip() {
         if (browserClient === "Netscape") {
-            theLayer = eval("document.layers[\'ToolTip\']");
+            var theLayer = eval("document.layers[\'ToolTip\']");
 
             if ((positionX + 120) > window.innerWidth) {
                 positionX = window.innerWidth - 150;
@@ -71,7 +71,7 @@
     }
 
     function hideTip() {
-        args = hideTip.arguments;
+        var args = hideTip.arguments;
 
         if (browserClient === "Netscape") {
             document.layers['ToolTip'].visibility = "hide";
