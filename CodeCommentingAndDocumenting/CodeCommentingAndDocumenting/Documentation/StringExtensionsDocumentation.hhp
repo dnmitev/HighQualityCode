@@ -1,0 +1,17 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=StringExtensionsDocumentation.chm
+Contents file=StringExtensionsDocumentation.hhc
+Index file=StringExtensionsDocumentation.hhk
+Default Topic=html\N_Telerik_ILS_Common.htm
+Full-text search=Yes
+Language=0x409 English (United States)
+Title=StringExtensionsDocumentation
+[FILES]
+icons\*.gif
+art\*.gif
+media\*.gif
+scripts\*.js
+styles\*.css
+html\*.htm
+[INFOTYPES]

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML/EN">
+<HTML>
+  <BODY>
+
+<UL>
+  <LI><OBJECT type="text/sitemap">
+    <param name="Name" value="Telerik.ILS.Common Namespace">
+    <param name="Local" value="html\N_Telerik_ILS_Common.htm">
+  </OBJECT></LI>
+  <UL>
+    <LI><OBJECT type="text/sitemap">
+      <param name="Name" value="StringExtensions Class">
+      <param name="Local" value="html\T_Telerik_ILS_Common_StringExtensions.htm">
+    </OBJECT></LI>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="StringExtensions Members">
+        <param name="Local" value="html\AllMembers_T_Telerik_ILS_Common_StringExtensions.htm">
+      </OBJECT></LI>
+    </UL>
+    <UL>
+      <LI><OBJECT type="text/sitemap">
+        <param name="Name" value="StringExtensions Methods">
+        <param name="Local" value="html\Methods_T_Telerik_ILS_Common_StringExtensions.htm">
+      </OBJECT></LI>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="CapitalizeFirstLetter Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_CapitalizeFirstLetter_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ConvertCyrillicToLatinLetters Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ConvertCyrillicToLatinLetters_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ConvertLatinToCyrillicKeyboard Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ConvertLatinToCyrillicKeyboard_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="GetFileExtension Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_GetFileExtension_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="GetFirstCharacters Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_GetFirstCharacters_2_01b939db.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="GetStringBetween Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_GetStringBetween_4_211a2472.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ToBoolean Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ToBoolean_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ToByteArray Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ToByteArray_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ToContentType Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ToContentType_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ToDateTime Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ToDateTime_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ToInteger Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ToInteger_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ToLong Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ToLong_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ToMd5Hash Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ToMd5Hash_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ToShort Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ToShort_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ToValidLatinFileName Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ToValidLatinFileName_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+      <UL>
+        <LI><OBJECT type="text/sitemap">
+          <param name="Name" value="ToValidUsername Method ">
+          <param name="Local" value="html\M_Telerik_ILS_Common_StringExtensions_ToValidUsername_1_72eac341.htm">
+        </OBJECT></LI>
+      </UL>
+    </UL>
+  </UL>
+</UL>  </BODY>
+</HTML>
