@@ -48,7 +48,7 @@
     <Compile Include="StraightlineCode\Chef.cs" />
     <Compile Include="StraightlineCode\Potato.cs" />
     <Compile Include="StraightlineCode\Vegetable.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Loops\Loop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
