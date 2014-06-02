@@ -18,16 +18,16 @@ public class SimpleMathExam : Exam
         {
             return this.problemsSolved;
         }
-        
+
         private set
         {
-            if (MinProblemCoutn < value && value < MaxProblemCount)
+            if (MinProblemCoutn > value && value < MaxProblemCount)
             {
-                this.problemsSolved = value;
+                throw new ArgumentOutOfRangeException(string.Format("Problems count must be a number between {0} and {1}", MinProblemCoutn, MaxProblemCount));
             }
             else
             {
-                throw new ArgumentOutOfRangeException(string.Format("Problems count must be a number between {0} and {1}", MinProblemCoutn, MaxProblemCount));
+                this.problemsSolved = value;
             }
         }
     }

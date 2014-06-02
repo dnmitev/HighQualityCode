@@ -20,13 +20,13 @@ public class CSharpExam : Exam
 
         private set
         {
-            if (value > 0 && value < MaxScore)
+            if (value < 0 && value > MaxScore)
             {
-                this.score = value;
+                throw new ArgumentOutOfRangeException(string.Format("Score should be a number between 0 and {0}", MaxScore));
             }
             else
             {
-                throw new ArgumentOutOfRangeException(string.Format("Score should be a number between 0 and {0}", MaxScore));
+                this.score = value;
             }
         }
     }

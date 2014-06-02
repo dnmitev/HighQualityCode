@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicMath", "BasicMath\BasicMath.csproj", "{1F974817-B2B6-49BA-B4DB-E9840E379DA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarSystem", "SolarSystem\SolarSystem.csproj", "{2F30E9AF-8256-40AF-B356-EA14E55CE9D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedMath", "AdvancedMath\AdvancedMath.csproj", "{02C0C93B-5CCD-4C0B-BEC3-969E0F235368}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortDiagnosis", "SortDiagnosis\SortDiagnosis.csproj", "{EA72721F-EF5A-401B-B0BE-31F521DDAC33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F974817-B2B6-49BA-B4DB-E9840E379DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F974817-B2B6-49BA-B4DB-E9840E379DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F974817-B2B6-49BA-B4DB-E9840E379DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F974817-B2B6-49BA-B4DB-E9840E379DA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F30E9AF-8256-40AF-B356-EA14E55CE9D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F30E9AF-8256-40AF-B356-EA14E55CE9D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F30E9AF-8256-40AF-B356-EA14E55CE9D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F30E9AF-8256-40AF-B356-EA14E55CE9D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02C0C93B-5CCD-4C0B-BEC3-969E0F235368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02C0C93B-5CCD-4C0B-BEC3-969E0F235368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02C0C93B-5CCD-4C0B-BEC3-969E0F235368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02C0C93B-5CCD-4C0B-BEC3-969E0F235368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA72721F-EF5A-401B-B0BE-31F521DDAC33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA72721F-EF5A-401B-B0BE-31F521DDAC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA72721F-EF5A-401B-B0BE-31F521DDAC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA72721F-EF5A-401B-B0BE-31F521DDAC33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

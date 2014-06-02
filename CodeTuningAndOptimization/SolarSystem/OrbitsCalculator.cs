@@ -92,11 +92,14 @@ namespace SolarSystem
         }
 
         private void EarthRotation()
-        {
-			for (decimal step = 0; step <= 360; step+=0.00005m)
-			{
-				EarthRotationAngle = ((double)step) * Days / EarthRotationPeriod;
-			}
+        {   
+            // following for-loop was a bottleneck!!!!
+            //for (decimal step = 0; step <= 360; step+=0.00005m)
+            //{
+            //    EarthRotationAngle = ((double)step) * Days / EarthRotationPeriod;
+            //} 
+
+            EarthRotationAngle = 360 * Days / EarthRotationPeriod; // this optimizes the performance and the method is no longer a bottleneck
             Update("EarthRotationAngle");
         }
 

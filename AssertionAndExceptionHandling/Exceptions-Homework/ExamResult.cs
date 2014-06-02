@@ -24,13 +24,13 @@ public class ExamResult
 
         private set
         {
-            if (value > 0)
+            if (value < 0)
             {
-                this.grade = value;
+                throw new ArgumentOutOfRangeException("Grade cannot be negative number.");
             }
             else
             {
-                throw new ArgumentOutOfRangeException("Grade cannot be negative number.");
+                this.grade = value;
             }
         }
     }
@@ -44,13 +44,13 @@ public class ExamResult
 
         private set
         {
-            if (value > 0)
+            if (value < 0)
             {
-                this.minGrade = value;
+                throw new ArgumentOutOfRangeException("Minimal grade cannot be negative number.");
             }
             else
             {
-                throw new ArgumentOutOfRangeException("Minimal grade cannot be negative number.");
+                this.minGrade = value;
             }
         }
     }
@@ -64,13 +64,13 @@ public class ExamResult
 
         private set
         {
-            if (value > this.MinGrade)
+            if (value < this.MinGrade)
             {
-                this.maxGrade = value;
+                throw new ArgumentOutOfRangeException("Max grade cannot be less than minimal grade.");
             }
             else
             {
-                throw new ArgumentOutOfRangeException("Max grade cannot be less than minimal grade.");
+                this.maxGrade = value;
             }
         }
     }
@@ -84,13 +84,13 @@ public class ExamResult
 
         private set
         {
-            if (!string.IsNullOrEmpty(value))
+            if (string.IsNullOrEmpty(value))
             {
-                this.comments = value;
+                throw new ArgumentNullException("Comments cannot be null or empty.");
             }
             else
             {
-                throw new ArgumentNullException("Comments cannot be null or empty.");
+                this.comments = value;
             }
         }
     }

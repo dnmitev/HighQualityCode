@@ -23,13 +23,13 @@ public class Student
 
         set
         {
-            if (!string.IsNullOrEmpty(value))
+            if (string.IsNullOrEmpty(value))
             {
-                this.firstName = value;
+                throw new ArgumentNullException("First name cannot be null or empty");
             }
             else
             {
-                throw new ArgumentNullException("First name cannot be null or empty");
+                this.firstName = value;
             }
         }
     }
@@ -43,13 +43,13 @@ public class Student
 
         set
         {
-            if (!string.IsNullOrEmpty(value))
+            if (string.IsNullOrEmpty(value))
             {
-                this.lastName = value;
+                throw new ArgumentNullException("Last name cannot be null or empty");
             }
             else
             {
-                throw new ArgumentNullException("Last name cannot be null or empty");
+                this.lastName = value;
             }
         }
     }
