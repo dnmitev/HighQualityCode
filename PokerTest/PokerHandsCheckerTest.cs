@@ -225,6 +225,115 @@
 
             Assert.IsTrue(checker.IsOnePair(hand), "There should be just one pair.");
             Assert.IsTrue(checker.IsFullHouse(hand));
+            Assert.IsFalse(checker.IsHighCard(hand), "This is a fullhouse not a high card hand.");
         }
+
+        [TestMethod]
+        public void IsRandomOrderStraightTest()
+        {
+            IHand hand = new Hand(new List<ICard>()
+            {
+                new Card(CardFace.Two, CardSuit.Clubs),
+                new Card(CardFace.Three, CardSuit.Spades),
+                new Card(CardFace.Five, CardSuit.Diamonds),
+                new Card(CardFace.Four, CardSuit.Hearts),
+                new Card(CardFace.Six, CardSuit.Clubs)
+            });
+
+            PokerHandsChecker checker = new PokerHandsChecker();
+
+            Assert.IsTrue(checker.IsStraight(hand));
+        }
+
+        [TestMethod]
+        public void IsOrderedStraightTest()
+        {
+            IHand hand = new Hand(new List<ICard>()
+            {
+                new Card(CardFace.Five, CardSuit.Clubs),
+                new Card(CardFace.Six, CardSuit.Spades),
+                new Card(CardFace.Seven, CardSuit.Diamonds),
+                new Card(CardFace.Eight, CardSuit.Hearts),
+                new Card(CardFace.Nine, CardSuit.Clubs)
+            });
+
+            PokerHandsChecker checker = new PokerHandsChecker();
+
+            Assert.IsTrue(checker.IsStraight(hand));
+        }
+
+        [TestMethod]
+        public void AceFirstOrderedCardStraightTest()
+        {
+            IHand hand = new Hand(new List<ICard>()
+            {
+                new Card(CardFace.Ace, CardSuit.Clubs),
+                new Card(CardFace.Two, CardSuit.Spades),
+                new Card(CardFace.Three, CardSuit.Diamonds),
+                new Card(CardFace.Four, CardSuit.Hearts),
+                new Card(CardFace.Five, CardSuit.Clubs)
+            });
+
+            PokerHandsChecker checker = new PokerHandsChecker();
+
+            Assert.IsTrue(checker.IsStraight(hand));
+            Assert.IsFalse(checker.IsStraightFlush(hand), "The hand is just straight, not straight flush");
+        }
+
+        [TestMethod]
+        public void AceFirstNotOrderedCardStraightTest()
+        {
+            IHand hand = new Hand(new List<ICard>()
+            {
+                new Card(CardFace.Ace, CardSuit.Clubs),
+                new Card(CardFace.Three, CardSuit.Spades),
+                new Card(CardFace.Five, CardSuit.Diamonds),
+                new Card(CardFace.Four, CardSuit.Hearts),
+                new Card(CardFace.Two, CardSuit.Clubs)
+            });
+
+            PokerHandsChecker checker = new PokerHandsChecker();
+
+            Assert.IsTrue(checker.IsStraight(hand));
+            Assert.IsFalse(checker.IsStraightFlush(hand), "The hand is just straight, not straight flush");
+        }
+
+        [TestMethod]
+        public void AceLasttOrderedCardStraightTest()
+        {
+            IHand hand = new Hand(new List<ICard>()
+            {
+                new Card(CardFace.Ten, CardSuit.Spades),
+                new Card(CardFace.Jack, CardSuit.Diamonds),
+                new Card(CardFace.Queen, CardSuit.Hearts),
+                new Card(CardFace.King, CardSuit.Clubs),
+                new Card(CardFace.Ace, CardSuit.Clubs)
+            });
+
+            PokerHandsChecker checker = new PokerHandsChecker();
+
+            Assert.IsTrue(checker.IsStraight(hand));
+            Assert.IsFalse(checker.IsStraightFlush(hand), "The hand is just straight, not straight flush");
+        }
+
+        [TestMethod]
+        public void AceLastNotOrderedCardStraightTest()
+        {
+            IHand hand = new Hand(new List<ICard>()
+            {
+                new Card(CardFace.Jack, CardSuit.Spades),
+                new Card(CardFace.Queen, CardSuit.Diamonds),
+                new Card(CardFace.Ten, CardSuit.Hearts),
+                new Card(CardFace.King, CardSuit.Clubs),
+                new Card(CardFace.Ace, CardSuit.Clubs)
+            });
+
+            PokerHandsChecker checker = new PokerHandsChecker();
+
+            Assert.IsTrue(checker.IsStraight(hand));
+            Assert.IsFalse(checker.IsHighCard(hand), "This straight not a high card hand.");
+            Assert.IsFalse(checker.IsStraightFlush(hand), "The hand is just straight, not straight flush");
+        }
+
     }
 }

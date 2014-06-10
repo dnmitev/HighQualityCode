@@ -28,7 +28,19 @@
 
         public bool IsStraightFlush(IHand hand)
         {
-            throw new NotImplementedException();
+            var checker = new PokerHandsChecker();
+
+            bool straight = checker.IsStraight(hand);
+            bool flush = checker.IsFlush(hand);
+
+            if (straight && flush)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool IsFourOfAKind(IHand hand)
@@ -79,7 +91,55 @@
 
         public bool IsStraight(IHand hand)
         {
-            throw new NotImplementedException();
+            // check for an ace
+            bool hasAce = false;
+            var cards = new List<int>();
+            for (int i = 0; i < hand.Cards.Count; i++)
+            {
+                if (hand.Cards[i].Face == CardFace.Ace)
+                {
+                    hasAce = true;
+                }
+                else
+                {
+                    cards.Add((int)hand.Cards[i].Face);
+                }
+            }
+
+            cards.Sort();
+
+            if (cards[0] == 10 && hasAce)
+            {
+                for (int i = 1; i < 4; i++)
+                {
+                    if (cards[i] != i + 10)
+                    {
+                        return false;
+                    }
+                }
+            }
+            else if (cards[0] == 2 && hasAce)
+            {
+                for (int i = 1; i < 4; i++)
+                {
+                    if (cards[i] != i + 2)
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 1; i < 5; i++)
+                {
+                    if (cards[i] - cards[i - 1] != 1)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
         public bool IsThreeOfAKind(IHand hand)
@@ -126,11 +186,20 @@
 
         public bool IsHighCard(IHand hand)
         {
-            throw new NotImplementedException();
+            if (this.IsFlush(hand) || this.IsFourOfAKind(hand) ||
+                this.IsFullHouse(hand) || this.IsOnePair(hand) ||
+                this.IsStraight(hand) || this.IsStraightFlush(hand) ||
+                this.IsThreeOfAKind(hand) || this.IsTwoPair(hand))
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public int CompareHands(IHand firstHand, IHand secondHand)
         {
+            // Sorry, but I have to do also a JS teamwork 
             throw new NotImplementedException();
         }
 
