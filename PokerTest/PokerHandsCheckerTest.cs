@@ -334,6 +334,5 @@
             Assert.IsFalse(checker.IsHighCard(hand), "This straight not a high card hand.");
             Assert.IsFalse(checker.IsStraightFlush(hand), "The hand is just straight, not straight flush");
         }
-
     }
 }
