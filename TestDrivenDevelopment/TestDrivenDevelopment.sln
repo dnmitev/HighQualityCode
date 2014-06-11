@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker", "Poker.csproj", "{28FE6BA3-4622-406E-81C4-419B0D2368F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker", "Poker\Poker.csproj", "{28FE6BA3-4622-406E-81C4-419B0D2368F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerTest", "..\PokerTest\PokerTest.csproj", "{845BB7C2-5428-40E3-8C28-8FED74B781DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerTest", "PokerTest\PokerTest.csproj", "{845BB7C2-5428-40E3-8C28-8FED74B781DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
