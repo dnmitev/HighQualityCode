@@ -1,0 +1,65 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Text" #>
+<#@ parameter type="System.Text.Encoding" name="encoding" #>
+<html>
+<head>
+    <style>
+        table, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2>Encoding <#=        encoding.EncodingName #></h2>
+<table>
+<#
+    /****************/
+    /* TABLE HEADER */
+    /****************/
+#>
+<tr>
+<#    for (int jj = 0; jj < 4; ++jj) { #>
+<th>HEX</th>
+<th>CHAR</th>
+<#    } #>
+</tr>
+<#
+    /********************/
+    /* TABLE HEADER END */
+    /********************/
+#>
+<#    for (int ii = 0; ii < 64; ++ii) { #>
+<tr>
+<#
+        /*******************/
+        /* TABLE ROW START */
+        /*******************/
+#>
+<#        for (int jj = 0; jj < 4; ++jj) { #>
+<#
+            /*******************/
+            /* CHARACTER START */
+            /*******************/
+#>
+<#            byte charCode = (byte)(ii*4 + jj); #>
+        <td><#=                charCode.ToString("X") #></td>
+        <td><#=                encoding.GetString(new[]{ charCode }) #></td>
+<#
+            /*****************/
+            /* CHARACTER END */
+            /*****************/
+#>
+<#        } #>
+<#
+        /*****************/
+        /* TABLE ROW END */
+        /*****************/
+#>
+</tr>
+<#    } #>
+</table>
+</body>
+</html>
+<#+    public Encoding Encoding { set { this._encodingField = value; } } #>

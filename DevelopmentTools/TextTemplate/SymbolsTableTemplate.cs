@@ -9,18 +9,16 @@
 // ------------------------------------------------------------------------------
 namespace JustLog
 {
-    using System.Linq;
     using System.Text;
-    using System.Collections.Generic;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\RuntimeTextTemplate1.tt"
+    #line 1 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
-    public partial class RuntimeTextTemplate1 : RuntimeTextTemplate1Base
+    public partial class SymbolsTableTemplate : SymbolsTableTemplateBase
     {
 #line hidden
         /// <summary>
@@ -28,9 +26,194 @@ namespace JustLog
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("namespace  \r\n");
+            this.Write("<html>\r\n<head>\r\n    <style>\r\n        table, td, th {\r\n            border: 1px sol" +
+                    "id black;\r\n            border-collapse: collapse;\r\n            text-align: cente" +
+                    "r;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<h2>Encoding ");
+            
+            #line 15 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(encoding.EncodingName));
+            
+            #line default
+            #line hidden
+            this.Write("</h2>\r\n<table>\r\n");
+            
+            #line 17 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+
+    /****************/
+    /* TABLE HEADER */
+    /****************/
+
+            
+            #line default
+            #line hidden
+            this.Write("<tr>\r\n");
+            
+            #line 23 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+    for (int jj = 0; jj < 4; ++jj) { 
+            
+            #line default
+            #line hidden
+            this.Write("<th>HEX</th>\r\n<th>CHAR</th>\r\n");
+            
+            #line 26 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+    } 
+            
+            #line default
+            #line hidden
+            this.Write("</tr>\r\n");
+            
+            #line 28 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+
+    /********************/
+    /* TABLE HEADER END */
+    /********************/
+
+            
+            #line default
+            #line hidden
+            
+            #line 33 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+    for (int ii = 0; ii < 64; ++ii) { 
+            
+            #line default
+            #line hidden
+            this.Write("<tr>\r\n");
+            
+            #line 35 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+
+        /*******************/
+        /* TABLE ROW START */
+        /*******************/
+
+            
+            #line default
+            #line hidden
+            
+            #line 40 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+        for (int jj = 0; jj < 4; ++jj) { 
+            
+            #line default
+            #line hidden
+            
+            #line 41 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+
+            /*******************/
+            /* CHARACTER START */
+            /*******************/
+
+            
+            #line default
+            #line hidden
+            
+            #line 46 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+            byte charCode = (byte)(ii*4 + jj); 
+            
+            #line default
+            #line hidden
+            this.Write("        <td>");
+            
+            #line 47 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(charCode.ToString("X")));
+            
+            #line default
+            #line hidden
+            this.Write("</td>\r\n        <td>");
+            
+            #line 48 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(encoding.GetString(new[]{ charCode })));
+            
+            #line default
+            #line hidden
+            this.Write("</td>\r\n");
+            
+            #line 49 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+
+            /*****************/
+            /* CHARACTER END */
+            /*****************/
+
+            
+            #line default
+            #line hidden
+            
+            #line 54 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+        } 
+            
+            #line default
+            #line hidden
+            
+            #line 55 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+
+        /*****************/
+        /* TABLE ROW END */
+        /*****************/
+
+            
+            #line default
+            #line hidden
+            this.Write("</tr>\r\n");
+            
+            #line 61 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+    } 
+            
+            #line default
+            #line hidden
+            this.Write("</table>\r\n</body>\r\n</html>\r\n");
             return this.GenerationEnvironment.ToString();
         }
+        
+        #line 65 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+    public Encoding Encoding { set { this._encodingField = value; } } 
+        
+        #line default
+        #line hidden
+        
+        #line 1 "C:\Users\user\Documents\GitHub\HighQualityCode\DevelopmentTools\JustLog\SymbolsTableTemplate.tt"
+
+private global::System.Text.Encoding _encodingField;
+
+/// <summary>
+/// Access the encoding parameter of the template.
+/// </summary>
+private global::System.Text.Encoding encoding
+{
+    get
+    {
+        return this._encodingField;
+    }
+}
+
+
+/// <summary>
+/// Initialize the template
+/// </summary>
+public virtual void Initialize()
+{
+    if ((this.Errors.HasErrors == false))
+    {
+bool encodingValueAcquired = false;
+if (this.Session.ContainsKey("encoding"))
+{
+    this._encodingField = ((global::System.Text.Encoding)(this.Session["encoding"]));
+    encodingValueAcquired = true;
+}
+if ((encodingValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("encoding");
+    if ((data != null))
+    {
+        this._encodingField = ((global::System.Text.Encoding)(data));
+    }
+}
+
+
+    }
+}
+
+
+        
+        #line default
+        #line hidden
     }
     
     #line default
@@ -40,7 +223,7 @@ namespace JustLog
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
-    public class RuntimeTextTemplate1Base
+    public class SymbolsTableTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;
