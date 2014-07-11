@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{DCE2BCBE-EE4B-4396-AC9B-8100F63D2C29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Facade\Facade.csproj", "{1DC2E86A-7C5C-4A18-BA4B-4C0330EEB66A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memento", "Memento\Memento.csproj", "{C531893B-94B8-48BC-8E6B-969BAFAAF2DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE2BCBE-EE4B-4396-AC9B-8100F63D2C29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE2BCBE-EE4B-4396-AC9B-8100F63D2C29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE2BCBE-EE4B-4396-AC9B-8100F63D2C29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE2BCBE-EE4B-4396-AC9B-8100F63D2C29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DC2E86A-7C5C-4A18-BA4B-4C0330EEB66A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC2E86A-7C5C-4A18-BA4B-4C0330EEB66A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC2E86A-7C5C-4A18-BA4B-4C0330EEB66A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC2E86A-7C5C-4A18-BA4B-4C0330EEB66A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C531893B-94B8-48BC-8E6B-969BAFAAF2DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C531893B-94B8-48BC-8E6B-969BAFAAF2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C531893B-94B8-48BC-8E6B-969BAFAAF2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C531893B-94B8-48BC-8E6B-969BAFAAF2DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

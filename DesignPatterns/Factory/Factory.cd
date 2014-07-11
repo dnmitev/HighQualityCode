@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Factory.MatrixFactory">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAIEAQAAAAEAAAAgAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>MatrixFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Factory.EvenNumbersMatrixFactory">
+    <Position X="4.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>EvenNumbersMatrixFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Factory.OddNumbersMatrixFactory">
+    <Position X="6.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>OddNumbersMatrixFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Factory.CharMatrixFactory">
+    <Position X="8.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>CharMatrixFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

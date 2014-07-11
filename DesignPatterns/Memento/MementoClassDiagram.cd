@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Memento.CodeRepository" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEgABAAAAAAEAAAgAAAAAAAAIAADAAAAAAAAAAA=</HashCode>
+      <FileName>CodeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Memento.Code" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAgAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Code.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Memento.Memento" Collapsed="true">
+    <Position X="4.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAgAAAAAAAAIAABAAAAAAAAAAA=</HashCode>
+      <FileName>Memento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Memento.RepositoryMemory" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RepositoryMemory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Memento.Demo" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Demo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Memento.ICode" Collapsed="true">
+    <Position X="4.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICode.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
