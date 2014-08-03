@@ -24,7 +24,7 @@ namespace Phonebook.Repository
             {
                 entry = new PhonebookEntry();
                 entry.Name = name;
-                entry.Strings = new SortedSet<string>();
+                entry.PhoneNumbers = new SortedSet<string>();
                 this.dict.Add(name2, entry);
 
                 this.sorted.Add(entry);
@@ -35,7 +35,7 @@ namespace Phonebook.Repository
                 this.multidict.Add(num, entry);
             }
 
-            entry.Strings.UnionWith(nums);
+            entry.PhoneNumbers.UnionWith(nums);
             return flag;
         }
 
@@ -44,10 +44,10 @@ namespace Phonebook.Repository
             var found = this.multidict[oldent].ToList();
             foreach (var entry in found)
             {
-                entry.Strings.Remove(oldent);
+                entry.PhoneNumbers.Remove(oldent);
                 this.multidict.Remove(oldent, entry);
 
-                entry.Strings.Add(newent);
+                entry.PhoneNumbers.Add(newent);
                 this.multidict.Add(newent, entry);
             }
 
