@@ -7,18 +7,18 @@ namespace Phonebook
 {
     internal class REP : IPhonebookRepository
     {
-        private readonly OrderedSet<Class1> sorted = new OrderedSet<Class1>();
-        private readonly Dictionary<string, Class1> dict = new Dictionary<string, Class1>();
-        private readonly MultiDictionary<string, Class1> multidict = new MultiDictionary<string, Class1>(false);
+        private readonly OrderedSet<PhonebookEntry> sorted = new OrderedSet<PhonebookEntry>();
+        private readonly Dictionary<string, PhonebookEntry> dict = new Dictionary<string, PhonebookEntry>();
+        private readonly MultiDictionary<string, PhonebookEntry> multidict = new MultiDictionary<string, PhonebookEntry>(false);
 
         public bool AddPhone(string name, IEnumerable<string> nums)
         {
             string name2 = name.ToLowerInvariant();
-            Class1 entry;
+            PhonebookEntry entry;
             bool flag = !this.dict.TryGetValue(name2, out entry);
             if (flag)
             {
-                entry = new Class1();
+                entry = new PhonebookEntry();
                 entry.Name = name;
                 entry.Strings = new SortedSet<string>();
                 this.dict.Add(name2, entry);
@@ -51,18 +51,18 @@ namespace Phonebook
             return found.Count;
         }
 
-        public Class1[] ListEntries(int first, int num)
+        public PhonebookEntry[] ListEntries(int first, int num)
         {
             if (first < 0 || first + num > this.dict.Count)
             {
                 Console.WriteLine("Invalid start index or count.");
                 return null;
             }
-            Class1[] list = new Class1[num];
+            PhonebookEntry[] list = new PhonebookEntry[num];
 
             for (int i = first; i <= first + num - 1; i++)
             {
-                Class1 entry = this.sorted[i];
+                PhonebookEntry entry = this.sorted[i];
                 list[i - first] =
                     entry;
             }

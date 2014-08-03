@@ -6,7 +6,7 @@ namespace Phonebook
 {
     internal class REPNew : IPhonebookRepository
     {
-        public List<Class1> entries = new List<Class1>();
+        public List<PhonebookEntry> entries = new List<PhonebookEntry>();
 
         public bool AddPhone(string name, IEnumerable<string> nums)
         {
@@ -15,7 +15,7 @@ namespace Phonebook
             bool flag;
             if (old.Count() == 0)
             {
-                Class1 obj = new Class1();
+                PhonebookEntry obj = new PhonebookEntry();
                 obj.Name = name;
                 obj.Strings = new SortedSet<string>();
 
@@ -30,7 +30,7 @@ namespace Phonebook
             }
             else if (old.Count() == 1)
             {
-                Class1 obj2 = old.First();
+                PhonebookEntry obj2 = old.First();
                 foreach (var num
 
                     in nums)
@@ -66,7 +66,7 @@ namespace Phonebook
             return nums;
         }
 
-        public Class1[] ListEntries(int start, int num)
+        public PhonebookEntry[] ListEntries(int start, int num)
         {
             if (start < 0 || start + num > this.entries.Count)
             {
@@ -74,10 +74,10 @@ namespace Phonebook
             }
 
             this.entries.Sort();
-            Class1[] ent = new Class1[num];
+            PhonebookEntry[] ent = new PhonebookEntry[num];
             for (int i = start; i <= start + num - 1; i++)
             {
-                Class1 entry = this.entries[i];
+                PhonebookEntry entry = this.entries[i];
                 ent[i -
                     start] = entry;
             }

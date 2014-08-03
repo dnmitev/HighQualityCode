@@ -10,6 +10,6 @@ namespace Phonebook
         int ChangePhone(
             string oldPhoneNumber, string newPhoneNumber);
 
-        Class1[] ListEntries(int startIndex, int count);
+        PhonebookEntry[] ListEntries(int startIndex, int count);
     }
 }

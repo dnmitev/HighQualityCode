@@ -1,13 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Phonebook
 {
-    internal class Class1 : IComparable<Class1>
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    public class PhonebookEntry : IComparable<PhonebookEntry>
     {
         private string name;
-        private string name2;
 
         public string Name
         {
@@ -18,9 +17,16 @@ namespace Phonebook
 
             set
             {
-                this.name = value;
+                if (value.Length > 200)
+                {
+                    throw new ArgumentOutOfRangeException("Name cannot exceed 200 characters");
+                }
+                else if (value.IndexOf(',') > 0 || value.IndexOf(':') > 0 || value.IndexOf("\n") > 0)
+                {
+                    throw new ArgumentException("Phone entry name cannot contain symbols ',', ':' or '\\n'.");
+                }
 
-                this.name2 = value.ToLowerInvariant();
+                this.name = value.Trim();
             }
         }
 
@@ -53,9 +59,9 @@ namespace Phonebook
             return sb.ToString();
         }
 
-        public int CompareTo(Class1 other)
+        public int CompareTo(PhonebookEntry otherEntry)
         {
-            return this.name2.CompareTo(other.name2);
+            return this.name.CompareTo(otherEntry.name.ToLowerInvariant());
         }
     }
 }

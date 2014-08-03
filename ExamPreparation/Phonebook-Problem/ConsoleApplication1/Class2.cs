@@ -1,16 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Wintellect.PowerCollections;
-
 namespace Phonebook
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using Wintellect.PowerCollections;
+
     internal class Class2
     {
-        private static readonly IPhonebookRepository data = new
-
-        REPNew();// this works!
+        private static readonly IPhonebookRepository data = new REPNew();
         private static readonly StringBuilder input = new StringBuilder();
 
         private const string DefaultCountryCode = "+359";
@@ -97,7 +95,7 @@ namespace Phonebook
             {
                 try
                 {
-                    IEnumerable<Class1> entries = data.ListEntries(int.Parse(strings[0]), int.Parse(strings[1]));
+                    IEnumerable<PhonebookEntry> entries = data.ListEntries(int.Parse(strings[0]), int.Parse(strings[1]));
                     foreach (var entry in entries)
                     {
                         Print(entry.ToString());
