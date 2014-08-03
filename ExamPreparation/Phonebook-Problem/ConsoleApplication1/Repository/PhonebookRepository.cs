@@ -1,17 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Wintellect.PowerCollections;
-
-namespace Phonebook
+namespace Phonebook.Repository
 {
-    internal class REP : IPhonebookRepository
+    using Phonebook;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Phonebook.Repository;
+    using Wintellect.PowerCollections;
+
+    public class PhonebookRepository : IPhonebookRepository
     {
+        // TODO: Take another look at this class
         private readonly OrderedSet<PhonebookEntry> sorted = new OrderedSet<PhonebookEntry>();
         private readonly Dictionary<string, PhonebookEntry> dict = new Dictionary<string, PhonebookEntry>();
         private readonly MultiDictionary<string, PhonebookEntry> multidict = new MultiDictionary<string, PhonebookEntry>(false);
 
-        public bool AddPhone(string name, IEnumerable<string> nums)
+        public bool CanPhoneBeAdded(string name, IEnumerable<string> nums)
         {
             string name2 = name.ToLowerInvariant();
             PhonebookEntry entry;
@@ -28,8 +31,7 @@ namespace Phonebook
 
             foreach (var num in nums)
             {
-                this.multidict.Add(num,
-                    entry);
+                this.multidict.Add(num, entry);
             }
 
             entry.Strings.UnionWith(nums);
@@ -55,16 +57,15 @@ namespace Phonebook
         {
             if (first < 0 || first + num > this.dict.Count)
             {
-                Console.WriteLine("Invalid start index or count.");
-                return null;
+                throw new ArgumentOutOfRangeException("Invalid range");
             }
+
             PhonebookEntry[] list = new PhonebookEntry[num];
 
             for (int i = first; i <= first + num - 1; i++)
             {
                 PhonebookEntry entry = this.sorted[i];
-                list[i - first] =
-                    entry;
+                list[i - first] = entry;
             }
 
             return list;

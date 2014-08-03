@@ -59,11 +59,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandFactory.cs" />
+    <Compile Include="Command\AddPhoneCommand.cs" />
+    <Compile Include="Command\ChangePhoneCommand.cs" />
+    <Compile Include="Command\IPhonebookCommand.cs" />
+    <Compile Include="Command\ListEntriesCommand.cs" />
+    <Compile Include="Command\PhonebookCommand.cs" />
+    <Compile Include="ICommandFactory.cs" />
+    <Compile Include="CommandInfo.cs" />
+    <Compile Include="Parser\CommandParser.cs" />
+    <Compile Include="Parser\ICommandParser.cs" />
+    <Compile Include="PhoneSanitizer\IPhoneNumberSanitizer.cs" />
+    <Compile Include="PhoneSanitizer\PhoneNumberSanitizer.cs" />
+    <Compile Include="Printer\StringBuilderPrinter.cs" />
+    <Compile Include="Printer\IPrinter.cs" />
     <Compile Include="PhonebookEntry.cs" />
-    <Compile Include="IPhonebookRepository.cs" />
-    <Compile Include="Class2.cs" />
-    <Compile Include="REP.cs" />
-    <Compile Include="REPNew.cs" />
+    <Compile Include="Repository\IPhonebookRepository.cs" />
+    <Compile Include="PhonebookEntryPoint.cs" />
+    <Compile Include="Repository\PhonebookRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
