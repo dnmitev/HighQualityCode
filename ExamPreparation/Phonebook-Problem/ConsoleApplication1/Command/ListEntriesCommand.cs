@@ -7,7 +7,7 @@
 
     public class ListEntriesCommand : PhonebookCommand
     {
-        public ListEntriesCommand(IPrinter printer, IPhonebookRepository repo)
+        public ListEntriesCommand(IPrinter printer, IDeletablePhonebookRepository repo)
             : base(printer, repo)
         {
         }

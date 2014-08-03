@@ -1,4 +1,4 @@
-namespace Phonebook
+﻿namespace Phonebook.Demo
 {
     using System;
     using System.Linq;
@@ -13,7 +13,7 @@ namespace Phonebook
     {
         private static void Main()
         {
-            IPhonebookRepository data = new PhonebookRepository();
+            IDeletablePhonebookRepository data = new PhonebookRepository();
             IPrinter printer = new StringBuilderPrinter();
             IPhoneNumberSanitizer sanitezer = new PhoneNumberSanitizer();
             ICommandFactory commandFactory = new CommandFactory(printer, data, sanitezer);

@@ -9,15 +9,16 @@
 
     public class CommandFactory : ICommandFactory
     {
-        private IPhonebookRepository phonebookRepo;
+        private IDeletablePhonebookRepository phonebookRepo;
         private IPrinter printer;
         private IPhoneNumberSanitizer sanitizer;
 
         private IPhonebookCommand addEntryCommand;
         private IPhonebookCommand changePhoneCommand;
         private IPhonebookCommand listEntriesCommand;
+        private IPhonebookCommand removeCommand;
 
-        public CommandFactory(IPrinter printer, IPhonebookRepository repo, IPhoneNumberSanitizer sanitizer)
+        public CommandFactory(IPrinter printer, IDeletablePhonebookRepository repo, IPhoneNumberSanitizer sanitizer)
         {
             this.printer = printer;
             this.phonebookRepo = repo;
@@ -54,6 +55,15 @@
                 }
 
                 command = this.listEntriesCommand;
+            }
+            else if (commandName == "Remove")
+            {
+                if (this.removeCommand == null)
+                {
+                    this.removeCommand = new RemoveCommand(this.printer, this.phonebookRepo, this.sanitizer);
+                }
+
+                command = this.removeCommand;
             }
             else
             {

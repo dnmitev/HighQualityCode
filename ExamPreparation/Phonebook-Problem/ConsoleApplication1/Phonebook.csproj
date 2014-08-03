@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D60D857E-37F2-4205-BAB5-EE3C4B7B1911}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Phonebook</RootNamespace>
     <AssemblyName>Phonebook</AssemblyName>
@@ -46,6 +46,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PowerCollections">
       <HintPath>..\packages\XAct.Wintellect.PowerCollections.0.0.1\lib\net20\PowerCollections.dll</HintPath>
@@ -65,6 +68,7 @@
     <Compile Include="Command\IPhonebookCommand.cs" />
     <Compile Include="Command\ListEntriesCommand.cs" />
     <Compile Include="Command\PhonebookCommand.cs" />
+    <Compile Include="Command\RemoveCommand.cs" />
     <Compile Include="ICommandFactory.cs" />
     <Compile Include="CommandInfo.cs" />
     <Compile Include="Parser\CommandParser.cs" />
@@ -74,8 +78,8 @@
     <Compile Include="Printer\StringBuilderPrinter.cs" />
     <Compile Include="Printer\IPrinter.cs" />
     <Compile Include="PhonebookEntry.cs" />
+    <Compile Include="Repository\IDeletablePhonebookRepository.cs" />
     <Compile Include="Repository\IPhonebookRepository.cs" />
-    <Compile Include="PhonebookEntryPoint.cs" />
     <Compile Include="Repository\PhonebookRepository.cs" />
   </ItemGroup>
   <ItemGroup>

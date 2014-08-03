@@ -8,24 +8,23 @@ namespace Phonebook.Repository
 
     using Wintellect.PowerCollections;
 
-    public class PhonebookRepository : IPhonebookRepository
+    public class PhonebookRepository : IPhonebookRepository, IDeletablePhonebookRepository
     {
-        // TODO: Take another look at this class
         private readonly OrderedSet<PhonebookEntry> sorted = new OrderedSet<PhonebookEntry>();
         private readonly Dictionary<string, PhonebookEntry> dict = new Dictionary<string, PhonebookEntry>();
         private readonly MultiDictionary<string, PhonebookEntry> multidict = new MultiDictionary<string, PhonebookEntry>(false);
 
-        public bool CanPhoneBeAdded(string name, IEnumerable<string> nums)
+        public bool AddPhone(string name, IEnumerable<string> nums)
         {
-            string name2 = name.ToLowerInvariant();
+            string invartiantName = name.ToLowerInvariant();
             PhonebookEntry entry;
-            bool flag = !this.dict.TryGetValue(name2, out entry);
-            if (flag)
+            bool isNewEntry = !this.dict.TryGetValue(invartiantName, out entry);
+            if (isNewEntry)
             {
                 entry = new PhonebookEntry();
                 entry.Name = name;
                 entry.PhoneNumbers = new SortedSet<string>();
-                this.dict.Add(name2, entry);
+                this.dict.Add(invartiantName, entry);
 
                 this.sorted.Add(entry);
             }
@@ -36,7 +35,7 @@ namespace Phonebook.Repository
             }
 
             entry.PhoneNumbers.UnionWith(nums);
-            return flag;
+            return isNewEntry;
         }
 
         public int ChangePhone(string oldent, string newent)
@@ -70,6 +69,21 @@ namespace Phonebook.Repository
             }
 
             return list;
+        }
+
+        public bool Remove(string phoneNumber)
+        {
+            var dictionaryCopy = this.dict.ToArray();
+            foreach (var entry in dictionaryCopy)
+            {
+                entry.Value.PhoneNumbers.Remove(phoneNumber);
+                if (entry.Value.PhoneNumbers.Count == 0)
+                {
+                    this.dict.Remove(entry.Key);
+                }
+            }
+
+            return true;
         }
     }
 }

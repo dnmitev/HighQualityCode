@@ -6,20 +6,20 @@
 
     public abstract class PhonebookCommand : IPhonebookCommand
     {
-        public PhonebookCommand(IPrinter printer, IPhonebookRepository repo)
+        public PhonebookCommand(IPrinter printer, IDeletablePhonebookRepository repo)
         {
             this.Printer = printer;
             this.PhonebookRepo = repo;
         }
 
-        public PhonebookCommand(IPrinter printer, IPhonebookRepository repo, IPhoneNumberSanitizer sanitizer)
+        public PhonebookCommand(IPrinter printer, IDeletablePhonebookRepository repo, IPhoneNumberSanitizer sanitizer)
         {
             this.Printer = printer;
             this.PhonebookRepo = repo;
             this.Sanitizer = sanitizer;
         }
 
-        public IPhonebookRepository PhonebookRepo { get; protected set; }
+        public IDeletablePhonebookRepository PhonebookRepo { get; protected set; }
 
         public IPrinter Printer { get; protected set; }
 

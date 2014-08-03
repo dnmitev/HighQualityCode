@@ -6,7 +6,7 @@
 
     public class ChangePhoneCommand : PhonebookCommand
     {
-        public ChangePhoneCommand(IPrinter printer, IPhonebookRepository repo, IPhoneNumberSanitizer sanitizer)
+        public ChangePhoneCommand(IPrinter printer, IDeletablePhonebookRepository repo, IPhoneNumberSanitizer sanitizer)
             : base(printer, repo, sanitizer)
         {
         }

@@ -8,7 +8,7 @@
 
     public class AddPhoneCommand : PhonebookCommand
     {
-        public AddPhoneCommand(IPrinter printer, IPhonebookRepository repo, IPhoneNumberSanitizer sanitizer)
+        public AddPhoneCommand(IPrinter printer, IDeletablePhonebookRepository repo, IPhoneNumberSanitizer sanitizer)
             : base(printer, repo, sanitizer)
         {
         }
@@ -23,7 +23,7 @@
                 phones[i] = this.Sanitizer.Sanitize(phones[i]);
             }
 
-            bool isPhoneEntryCreated = this.PhonebookRepo.CanPhoneBeAdded(name, phones);
+            bool isPhoneEntryCreated = this.PhonebookRepo.AddPhone(name, phones);
 
             if (isPhoneEntryCreated)
             {

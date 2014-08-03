@@ -6,7 +6,7 @@
     
     public interface IPhonebookCommand
     {
-        IPhonebookRepository PhonebookRepo { get; }
+        IDeletablePhonebookRepository PhonebookRepo { get; }
 
         IPrinter Printer { get; }
 

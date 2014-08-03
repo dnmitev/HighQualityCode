@@ -30,7 +30,6 @@ namespace Phonebook
             }
         }
 
-        // TODO: Check this one
         public SortedSet<string> PhoneNumbers { get; set; }
 
         public override string ToString()

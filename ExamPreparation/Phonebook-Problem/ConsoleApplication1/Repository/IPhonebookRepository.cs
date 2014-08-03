@@ -9,12 +9,12 @@ namespace Phonebook.Repository
     public interface IPhonebookRepository
     {
         /// <summary>
-        /// Check whether an entry can be added as new or it si already available on the current phonebook
+        /// Check whether an entry can be added as new or it is already available on the current phonebook
         /// </summary>
         /// <param name="name">Phonebook entry's name as a string</param>
         /// <param name="phoneNumbers">Phone entry's available phones as a collection of strings</param>
         /// <returns>If the phone entry can be added to the phonebook as a boolean</returns>
-        bool CanPhoneBeAdded(string name, IEnumerable<string> phoneNumbers);
+        bool AddPhone(string name, IEnumerable<string> phoneNumbers);
 
         /// <summary>
         /// Changes given phone number to new one and returns the count of the changed phone numbers
