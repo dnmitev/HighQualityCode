@@ -1,13 +1,9 @@
 ﻿namespace Phonebook.Command
 {
-    using Phonebook.PhoneSanitizer;
+    using System;
+
     using Phonebook.Printer;
     using Phonebook.Repository;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class ListEntriesCommand : PhonebookCommand
     {

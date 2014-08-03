@@ -1,10 +1,11 @@
 namespace Phonebook.Repository
 {
-    using Phonebook;
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Phonebook.Repository;
+
+    using Phonebook;
+
     using Wintellect.PowerCollections;
 
     public class PhonebookRepository : IPhonebookRepository

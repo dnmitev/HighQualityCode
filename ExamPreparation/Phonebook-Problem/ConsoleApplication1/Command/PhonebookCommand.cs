@@ -1,6 +1,5 @@
 ﻿namespace Phonebook.Command
 {
-    using System;
     using Phonebook.PhoneSanitizer;
     using Phonebook.Printer;
     using Phonebook.Repository;

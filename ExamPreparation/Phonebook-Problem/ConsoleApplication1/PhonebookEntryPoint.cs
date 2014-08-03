@@ -1,14 +1,13 @@
 namespace Phonebook
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using Phonebook.Repository;
-    using Phonebook.Printer;
-    using Phonebook.PhoneSanitizer;
-    using Phonebook.Parser;
+
     using Phonebook.Command;
+    using Phonebook.Parser;
+    using Phonebook.PhoneSanitizer;
+    using Phonebook.Printer;
+    using Phonebook.Repository;
 
     public class PhonebookEntryPoint
     {

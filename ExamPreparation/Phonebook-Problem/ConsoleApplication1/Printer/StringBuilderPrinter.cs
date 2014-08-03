@@ -1,10 +1,7 @@
 ﻿namespace Phonebook.Printer
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
 
     public class StringBuilderPrinter : IPrinter
     {
@@ -17,7 +14,7 @@
 
         public void PrintAll()
         {
-            Console.Write(output.ToString());
+            Console.Write(this.output.ToString());
         }
     }
 }

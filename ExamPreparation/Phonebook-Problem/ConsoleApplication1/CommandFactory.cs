@@ -1,24 +1,21 @@
 ﻿namespace Phonebook
 {
+    using System;
+
     using Phonebook.Command;
     using Phonebook.PhoneSanitizer;
     using Phonebook.Printer;
     using Phonebook.Repository;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class CommandFactory : ICommandFactory
     {
-        IPhonebookRepository phonebookRepo;
-        IPrinter printer;
-        IPhoneNumberSanitizer sanitizer;
+        private IPhonebookRepository phonebookRepo;
+        private IPrinter printer;
+        private IPhoneNumberSanitizer sanitizer;
 
-        IPhonebookCommand addEntryCommand;
-        IPhonebookCommand changePhoneCommand;
-        IPhonebookCommand listEntriesCommand;
+        private IPhonebookCommand addEntryCommand;
+        private IPhonebookCommand changePhoneCommand;
+        private IPhonebookCommand listEntriesCommand;
 
         public CommandFactory(IPrinter printer, IPhonebookRepository repo, IPhoneNumberSanitizer sanitizer)
         {
@@ -31,7 +28,7 @@
         {
             IPhonebookCommand command;
 
-            if ((commandName.StartsWith("AddPhone")) && (argumentsCount >= 2))
+            if (commandName.StartsWith("AddPhone") && (argumentsCount >= 2))
             {
                 if (this.addEntryCommand == null)
                 {

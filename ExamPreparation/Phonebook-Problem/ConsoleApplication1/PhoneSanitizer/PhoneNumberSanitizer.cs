@@ -1,11 +1,6 @@
 ﻿namespace Phonebook.PhoneSanitizer
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
-    using Phonebook.PhoneSanitizer;
 
     public class PhoneNumberSanitizer : IPhoneNumberSanitizer
     {
@@ -22,15 +17,18 @@
                     sanitizedPhoneNumber.Append(symbol);
                 }
             }
+
             if (sanitizedPhoneNumber.Length >= 2 && sanitizedPhoneNumber[0] == '0' && sanitizedPhoneNumber[1] == '0')
             {
                 sanitizedPhoneNumber.Remove(0, 1);
                 sanitizedPhoneNumber[0] = '+';
             }
+
             while (sanitizedPhoneNumber.Length > 0 && sanitizedPhoneNumber[0] == '0')
             {
                 sanitizedPhoneNumber.Remove(0, 1);
             }
+
             if (sanitizedPhoneNumber.Length > 0 && sanitizedPhoneNumber[0] != '+')
             {
                 sanitizedPhoneNumber.Insert(0, DefaultCountryCode);
