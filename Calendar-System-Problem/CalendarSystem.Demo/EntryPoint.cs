@@ -1,9 +1,11 @@
-﻿namespace CalendarSystem
+﻿namespace CalendarSystem.Demo
 {
+    using System;
+
+    using CalendarSystem;
     using CalendarSystem.Factory;
     using CalendarSystem.Parser;
     using CalendarSystem.Printer;
-    using System;
 
     public class EntryPoint
     {
@@ -27,7 +29,7 @@
                 var command = commandFactory.CreateCommand(currentCmdInfo);
                 command.Execute(currentCmdInfo);
             }
-            
+
             printer.PrintAll();
         }
     }

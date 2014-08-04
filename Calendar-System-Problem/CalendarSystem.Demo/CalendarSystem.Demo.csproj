@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{55EA6945-0E2E-4542-BDBC-47C788AF99EC}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{4428E07A-1B7A-443A-8EE9-636728DFCFE5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CalendarSystem</RootNamespace>
-    <AssemblyName>CalendarSystem</AssemblyName>
+    <RootNamespace>CalendarSystem.Demo</RootNamespace>
+    <AssemblyName>CalendarSystem.Demo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,13 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PowerCollections">
-      <HintPath>.\PowerCollections.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,27 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factory\CommandFactory.cs" />
-    <Compile Include="CommandInfo.cs" />
-    <Compile Include="Factory\ICommandFactory.cs" />
-    <Compile Include="Parser\CommandParser.cs" />
-    <Compile Include="Command\AddEventCommand.cs" />
-    <Compile Include="Command\CalendarSystemCommand.cs" />
-    <Compile Include="Command\DeleteEventsCommand.cs" />
-    <Compile Include="Command\ICalendarSystemCommand.cs" />
-    <Compile Include="Command\ListEventsCommand.cs" />
-    <Compile Include="EventEntry.cs" />
-    <Compile Include="EventsManager.cs" />
-    <Compile Include="IEventsManager.cs" />
-    <Compile Include="Parser\ICommandParser.cs" />
-    <Compile Include="Printer\IPrinter.cs" />
-    <Compile Include="Printer\StringBuilderPrinter.cs" />
+    <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleApplication1\CalendarSystem.csproj">
+      <Project>{55ea6945-0e2e-4542-bdbc-47c788af99ec}</Project>
+      <Name>CalendarSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

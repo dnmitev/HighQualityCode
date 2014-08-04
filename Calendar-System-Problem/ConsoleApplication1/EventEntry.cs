@@ -1,14 +1,14 @@
-using System;
-
 namespace CalendarSystem
 {
+    using System;
+    
     public class EventEntry : IComparable<EventEntry>
     {
         public DateTime Date { get; set; }
 
-        public string Title;
+        public string Title { get; set; }
 
-        public string Location;
+        public string Location { get; set; }
 
         public override string ToString()
         {
@@ -17,6 +17,7 @@ namespace CalendarSystem
             {
                 eventStringFormat += " | {2}";
             }
+
             string eventAsString = string.Format(eventStringFormat, this.Date, this.Title, this.Location);
             return eventAsString;
         }

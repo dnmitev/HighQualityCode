@@ -1,8 +1,8 @@
-using System;
-using System.Collections.Generic;
-
 namespace CalendarSystem
 {
+    using System;
+    using System.Collections.Generic;
+    
     public interface IEventsManager
     {
         void AddEvent(EventEntry @event);

@@ -10,16 +10,16 @@ namespace CalendarSystem.Parser
             int indexOfCommandEnd = input.IndexOf(' ');
             if (indexOfCommandEnd == -1)
             {
-                throw new Exception(string.Format("Invalid command: {0}", input));
+                throw new ArgumentException(string.Format("Invalid command line: {0}", input));
             }
 
-            string commandName = input.Substring(0, indexOfCommandEnd);
-            string commandArgs = input.Substring(indexOfCommandEnd + 1);
+            string commandName = input.Substring(0, indexOfCommandEnd).Trim();
+            string commandArgs = input.Substring(indexOfCommandEnd + 1).Trim();
 
             var commandArguments = commandArgs.Split('|');
             for (int i = 0; i < commandArguments.Length; i++)
             {
-                commandArgs = commandArguments[i];
+                commandArgs = commandArguments[i].Trim();
                 commandArguments[i] = commandArgs.Trim();
             }
 

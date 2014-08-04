@@ -9,12 +9,12 @@
 
         public void Print(string text)
         {
-            output.AppendLine(text);
+            this.output.AppendLine(text);
         }
 
         public void PrintAll()
         {
-            Console.WriteLine(output.ToString());
+            Console.WriteLine(this.output.ToString());
         }
     }
 }

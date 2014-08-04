@@ -1,17 +1,15 @@
 ﻿namespace CalendarSystem.Factory
 {
+    using System;
+    using System.Linq;
+
     using CalendarSystem.Command;
     using CalendarSystem.Printer;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class CommandFactory : ICommandFactory
     {
-        private IEventsManager eventManager;
-        private IPrinter printer;
+        private readonly IEventsManager eventManager;
+        private readonly IPrinter printer;
 
         private ICalendarSystemCommand addEventCommand;
         private ICalendarSystemCommand deleteEventsCommand;
@@ -29,30 +27,30 @@
 
             if (cmdInfo.Name == "AddEvent" && (cmdInfo.Params.Count() == 2 || cmdInfo.Params.Count() == 3))
             {
-                if (addEventCommand == null)
+                if (this.addEventCommand == null)
                 {
-                    addEventCommand = new AddEventCommand(this.eventManager, this.printer);
+                    this.addEventCommand = new AddEventCommand(this.eventManager, this.printer);
                 }
 
-                command = addEventCommand;
+                command = this.addEventCommand;
             }
             else if (cmdInfo.Name == "DeleteEvents" && cmdInfo.Params.Count() == 1)
             {
-                if (deleteEventsCommand == null)
+                if (this.deleteEventsCommand == null)
                 {
-                    deleteEventsCommand = new DeleteEventsCommand(this.eventManager, this.printer);
+                    this.deleteEventsCommand = new DeleteEventsCommand(this.eventManager, this.printer);
                 }
 
-                command = deleteEventsCommand;
+                command = this.deleteEventsCommand;
             }
             else if (cmdInfo.Name == "ListEvents" && cmdInfo.Params.Count() == 2)
             {
-                if (listEventsCommand == null)
+                if (this.listEventsCommand == null)
                 {
-                    listEventsCommand = new ListEventsCommand(this.eventManager, this.printer);
+                    this.listEventsCommand = new ListEventsCommand(this.eventManager, this.printer);
                 }
 
-                command = listEventsCommand;
+                command = this.listEventsCommand;
             }
             else
             {

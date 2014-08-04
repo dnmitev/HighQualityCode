@@ -14,6 +14,6 @@
 
         public IPrinter Printer { get; private set; }
 
-        abstract public void Execute(CommandInfo command);
+        public abstract void Execute(CommandInfo command);
     }
 }
