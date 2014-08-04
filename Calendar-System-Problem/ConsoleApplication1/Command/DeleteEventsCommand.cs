@@ -1,10 +1,13 @@
 ﻿namespace CalendarSystem.Command
 {
+    using System;
+
     using CalendarSystem.Printer;
 
     public class DeleteEventsCommand : CalendarSystemCommand
     {
-        public DeleteEventsCommand(IEventsManager manager, IPrinter printer) : base(manager, printer)
+        public DeleteEventsCommand(IEventsManager manager, IPrinter printer)
+            : base(manager, printer)
         {
         }
 

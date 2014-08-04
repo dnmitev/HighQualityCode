@@ -1,14 +1,75 @@
 namespace CalendarSystem
 {
     using System;
-    
+
     public class EventEntry : IComparable<EventEntry>
     {
-        public DateTime Date { get; set; }
+        private const int MaxTitleLength = 100;
 
-        public string Title { get; set; }
+        private readonly DateTime minDate = new DateTime(2000, 01, 01, 00, 00, 00);
+        private readonly DateTime maxDate = new DateTime(2020, 01, 01, 00, 00, 00);
 
-        public string Location { get; set; }
+        private string title;
+        private string location;
+        private DateTime date;
+
+        public DateTime Date
+        {
+            get
+            {
+                return this.date;
+            }
+
+            set
+            {
+                if (value < this.minDate || value > this.maxDate)
+                {
+                    throw new ArgumentOutOfRangeException(string.Format("Date should be in the interval [{0}; {1}].", this.minDate, this.maxDate));
+                }
+
+                this.date = value;
+            }
+        }
+
+        public string Title
+        {
+            get
+            {
+                return this.title;
+            }
+
+            set
+            {
+                if (value.Length < 0 || value.Length > MaxTitleLength)
+                {
+                    throw new ArgumentOutOfRangeException(string.Format("Title length should be in the interval [{0}; {1}].", 0, this.maxDate));
+                }
+                else if (value.IndexOf('|') > 0 || value.IndexOf("\n") > 0)
+                {
+                    throw new FormatException("Title contains invalid symbols.");
+                }
+
+                this.title = value;
+            }
+        }
+
+        public string Location 
+        {
+            get
+            {
+                return this.location;
+            }
+
+            set
+            {
+                if (value.IndexOf('|') > 0 || value.IndexOf("\n") > 0)
+                {
+                    throw new FormatException("Title contains invalid symbols.");
+                }
+
+                this.location = value;
+            }
+        }
 
         public override string ToString()
         {
