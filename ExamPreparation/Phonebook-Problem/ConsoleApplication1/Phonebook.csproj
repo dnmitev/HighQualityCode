@@ -75,6 +75,9 @@
     <Compile Include="Parser\ICommandParser.cs" />
     <Compile Include="PhoneSanitizer\IPhoneNumberSanitizer.cs" />
     <Compile Include="PhoneSanitizer\PhoneNumberSanitizer.cs" />
+    <Compile Include="Printer\FancyPrinter.cs" />
+    <Compile Include="Printer\Printer.cs" />
+    <Compile Include="Printer\PrinterDecorator.cs" />
     <Compile Include="Printer\StringBuilderPrinter.cs" />
     <Compile Include="Printer\IPrinter.cs" />
     <Compile Include="PhonebookEntry.cs" />

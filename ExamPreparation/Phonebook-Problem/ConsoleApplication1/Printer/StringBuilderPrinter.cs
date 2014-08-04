@@ -3,16 +3,16 @@
     using System;
     using System.Text;
 
-    public class StringBuilderPrinter : IPrinter
+    public class StringBuilderPrinter : Printer
     {
         private StringBuilder output = new StringBuilder();
 
-        public void Print(string text)
+        public override void Print(string text)
         {
             this.output.AppendLine(text);
         }
 
-        public void PrintAll()
+        public override void PrintAll()
         {
             Console.Write(this.output.ToString());
         }

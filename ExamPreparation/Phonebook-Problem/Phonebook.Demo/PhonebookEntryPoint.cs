@@ -16,8 +16,10 @@
             IDeletablePhonebookRepository data = new PhonebookRepository();
             IPrinter printer = new StringBuilderPrinter();
             IPhoneNumberSanitizer sanitezer = new PhoneNumberSanitizer();
-            ICommandFactory commandFactory = new CommandFactory(printer, data, sanitezer);
             ICommandParser commandParser = new CommandParser();
+
+            IPrinter fancyPrinter = new FancyPrinter(printer);
+            ICommandFactory commandFactory = new CommandFactory(fancyPrinter, data, sanitezer);
 
             while (true)
             {
@@ -32,7 +34,7 @@
                 currentCommand.Excecute(commandInfo.Arguments.ToArray());
             }
 
-            printer.PrintAll();
+            fancyPrinter.PrintAll();
         }
     }
 }
