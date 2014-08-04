@@ -8,7 +8,6 @@ namespace Phonebook.Printer
 {
     public class FancyPrinter : PrinterDecorator
     {
-        StringBuilder fancyOutput = new StringBuilder();
 
         public FancyPrinter(IPrinter printer)
             : base(printer)
@@ -18,7 +17,7 @@ namespace Phonebook.Printer
         public override void Print(string text)
         {
             base.Print(text);
-            fancyOutput.AppendLine("Bat Mitko");
+            base.Printer.Print("Because I'm happy :)");
         }
 
         public override void PrintAll()

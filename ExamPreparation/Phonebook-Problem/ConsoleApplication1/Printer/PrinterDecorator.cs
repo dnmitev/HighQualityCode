@@ -13,7 +13,7 @@ namespace Phonebook.Printer
             this.Printer = printer;
         }
 
-        public IPrinter Printer { get; set; }
+        protected IPrinter Printer { get; set; }
 
         public override void Print(string text)
         {
