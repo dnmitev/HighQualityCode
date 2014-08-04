@@ -44,17 +44,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command.cs" />
+    <Compile Include="Factory\CommandFactory.cs" />
+    <Compile Include="CommandInfo.cs" />
+    <Compile Include="Factory\ICommandFactory.cs" />
+    <Compile Include="Parser\CommandParser.cs" />
+    <Compile Include="Command\AddEventCommand.cs" />
+    <Compile Include="Command\CalendarSystemCommand.cs" />
+    <Compile Include="Command\DeleteEventsCommand.cs" />
+    <Compile Include="Command\ICalendarSystemCommand.cs" />
+    <Compile Include="Command\ListEventsCommand.cs" />
     <Compile Include="EventEntry.cs" />
     <Compile Include="EventsManager.cs" />
     <Compile Include="IEventsManager.cs" />
-    <Compile Include="CommandHandler.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="Parser\ICommandParser.cs" />
+    <Compile Include="Printer\IPrinter.cs" />
+    <Compile Include="Printer\StringBuilderPrinter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

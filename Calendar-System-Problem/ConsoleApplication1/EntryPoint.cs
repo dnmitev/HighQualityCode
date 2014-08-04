@@ -1,13 +1,19 @@
 ﻿namespace CalendarSystem
 {
+    using CalendarSystem.Factory;
+    using CalendarSystem.Parser;
+    using CalendarSystem.Printer;
     using System;
 
     public class EntryPoint
     {
-        internal static void Main()
+        public static void Main()
         {
-            var eventManager = new EventsManager();
-            var commandHandler = new CommandHandler(eventManager);
+            IEventsManager eventManager = new EventsManager();
+            ICommandParser commandParser = new CommandParser();
+            IPrinter printer = new StringBuilderPrinter();
+
+            ICommandFactory commandFactory = new CommandFactory(eventManager, printer);
 
             while (true)
             {
@@ -17,16 +23,12 @@
                     break;
                 }
 
-                //try
-                //{
-                    // The sequence of commands is finished
-                    Console.WriteLine(commandHandler.ProcessCommand(Command.Parse(userLine)));
-                //}
-                //catch (StackOverflowException ex)
-                //{
-                //    Console.WriteLine(ex.Message);
-                //}
+                var currentCmdInfo = commandParser.Parse(userLine);
+                var command = commandFactory.CreateCommand(currentCmdInfo);
+                command.Execute(currentCmdInfo);
             }
+            
+            printer.PrintAll();
         }
     }
 }
