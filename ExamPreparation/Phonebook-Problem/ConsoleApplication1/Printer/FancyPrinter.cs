@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Phonebook.Printer
+﻿namespace Phonebook.Printer
 {
+    using System;
+    using System.Linq;
+
     public class FancyPrinter : PrinterDecorator
     {
-
-        public FancyPrinter(IPrinter printer)
-            : base(printer)
+        public FancyPrinter(IPrinter printer) : base(printer)
         {
         }
 
         public override void Print(string text)
         {
             base.Print(text);
-            base.Printer.Print("Because I'm happy :)");
+            base.Print("Because I'm happy :)");
         }
 
         public override void PrintAll()
