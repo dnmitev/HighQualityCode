@@ -53,7 +53,7 @@ namespace CalendarSystem
             }
         }
 
-        public string Location 
+        public string Location
         {
             get
             {
@@ -86,18 +86,16 @@ namespace CalendarSystem
         public int CompareTo(EventEntry otherEvent)
         {
             int res = DateTime.Compare(this.Date, otherEvent.Date);
-            foreach (char c in this.Title)
-            {
-                if (res == 0)
-                {
-                    res = string.Compare(this.Title, otherEvent.Title, StringComparison.OrdinalIgnoreCase);
-                }
 
-                if (res == 0)
-                {
-                    res = string.Compare(this.Location, otherEvent.Location, StringComparison.OrdinalIgnoreCase);
-                }
+            if (res == 0)
+            {
+                res = string.Compare(this.Title, otherEvent.Title, StringComparison.OrdinalIgnoreCase);
             }
+            else if (res == 0)
+            {
+                res = string.Compare(this.Location, otherEvent.Location, StringComparison.OrdinalIgnoreCase);
+            }
+
 
             return res;
         }

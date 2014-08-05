@@ -36,10 +36,11 @@ namespace CalendarSystem
         public IEnumerable<EventEntry> ListEvents(DateTime date, int count)
         {
             var data =
-                    from e in this.orderedEventsCollection.RangeFrom(date, true).Values
-                    select e;
+                      from e in this.orderedEventsCollection.RangeFrom(date, true).Values
+                      select e;
 
             var events = data.Take(count);
+
             return events;
         }
     }
