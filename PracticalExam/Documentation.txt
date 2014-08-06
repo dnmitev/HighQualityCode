@@ -1,0 +1,44 @@
+Design pattern: Simple Factory
+	* SimpleComputerFactory.cs implements the ISimpleComputerFactory.cs interface and creates a concrete manufacturer according to its name, parsed from 
+	the user input on the console.
+
+Design pattern: Strategy
+	* Strategy is giving the CPU IRandomNumberProvider's strategy for having a randomly generated number value
+
+Design pattern: Template Method
+	* There is a base abstract class Cpu.cs that is used as a template for 32 and 64 bit processor object.
+
+Design pattern: Abstract factory
+	* AbstractComputerFactory.cs is the abstract facotry pattern to be derived by the Dell and HP manufacturers and make them create computer configurations
+
+Design pattern: Composite
+	* 
+
+Design pattern: Mediator
+	* Motherboard class acts as a Mediator knowning about the RAM and Video Card and giving their usability to the CPU.
+
+Found bottlenecks:
+	* Find the square of e number is done using a "for" loop instead of just multipling one by itself
+	* 
+
+Found bugs:
+	* in the inital Cpu.cs private readonly HardDriver videoCard; field was not instantieted in the constructor and throws A NullReferenceException
+	* missing '%' symbol in the expression "Battery status: {0}"
+	* Console.WriteLine("Invalid command!"); executes right after if statements
+
+Single responsibility principle
+	* Class HardDriver used to serve as a HardDrive and VideoCard container. Now every PC is separate class with an interface specifying its behaviour.
+
+Open/closed principle
+	* Passing interface instances in the constructors gives the flexibilty of taking current strategy /available actions/ given in the interfaces and implement it with another client
+
+Liskov substitution principle
+	* 
+
+Interface segregation principle
+	* All functionality is put into separate Interfaces giving the strategy of using them in the assembly
+
+Dependency inversion principle
+	* Template Pattern acts as a DI helpful design. Depending on interfaces in the object constructors gives DI.
+
+	!IMPORTANT: You should run project called: "ComputerSystem.Demo"
